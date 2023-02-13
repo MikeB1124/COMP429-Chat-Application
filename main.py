@@ -1,5 +1,4 @@
 import threading
-import time
 import socket
 
 serverPort = 0
@@ -211,7 +210,10 @@ while True and validServerPort:
     elif(userInput.split(" ")[0] == "send"):
         userId = userInput.split(" ")[1]
         message = userInput.split('"')[1]
-        sendMessage(userId, message)
+        if(len(message) <= 100):
+            sendMessage(userId, message)
+        else:
+            print("\nMessage cannot be longer then 100 characters.")
     elif(userInput == "exit"):
         exitApp()
     else:
