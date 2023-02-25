@@ -86,7 +86,7 @@ def removeConnectionFromLocal(ip, port):
 def help():
     print("\nWelcome to the chat application")
     print("-----------------------------------------------")
-    print("help\nmyip\nmyport\nconnect <destination> <port no>\nlist\nterminate <connection id>\nsend <connection id> <message>\nexit\n")
+    print('help\nmyip\nmyport\nconnect <destination ip address> <destingation port number>\nlist\nterminate <connection id>\nsend <connection id> "<message>"\nexit')
     print("-----------------------------------------------\n")
 
 def myip():
