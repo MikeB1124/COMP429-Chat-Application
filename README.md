@@ -1,6 +1,8 @@
-# Welcome To The CHAT APPLICATION
+# Welcome To The Chat Application
 
 ##### **Group Members: Michael Balian and Arin Deravanesian**
+
+---
 
 ### Prerequisites Before Running Application
 
@@ -20,11 +22,13 @@ Note: Depending on the version you installed you will either have to use python 
 
 ###### -You can find more information on setting environmental variables in this article: https://docs.python.org/3/using/windows.html
 
+---
+
 ### How To Run Chat Application
 
-###### Open a terminal and CD into the projects root directory
+###### -Open a terminal and CD into the projects root directory
 
-###### Run the main.py file to start application:
+###### -Run the main.py file to start application:
 
 ```
 python main.py
@@ -34,13 +38,15 @@ python3 main.py
 Note: Depending on the version you installed you will either have to use python or python3 as shown above
 ```
 
+---
+
 ### How to use the Chat Application
 
-###### Once you have ran the main.py file now you will be prompted to enter your server's listening port number
+###### -Once you have ran the main.py file now you will be prompted to enter your server's listening port number
 
-###### After you have entered a valid port number, you will now have access to client side commands to chat with other devices or processes
+###### -After you have entered a valid port number, you will now have access to client side commands to chat with other devices or processes
 
-###### You have access to the following commands:
+###### -You have access to the following commands:
 
 ```
 help - This will list all available commands
@@ -52,6 +58,8 @@ terminate <connection id> - Use this command to terminate a connection from the 
 send <connection id> "<message>" - Use this command to send a messge to another user from your list of established connections. (NOTE: MESSAGE MUST BE IN QUOTES)
 exit - Use this command to exit the chat application
 ```
+
+---
 
 ### Group member contributions
 
@@ -68,3 +76,11 @@ exit - Use this command to exit the chat application
 ###### -I also added some utility functions to work with managing client connections on the local machine. This way a user can add and terminate connections as needed
 
 ###### -I had to handle invalid cases like trying to establish a self connection, duplicate connections, when a user tries to establish the same connection multiple times it will only register one connection and not try to add mulitiple of the same connection.
+
+#### **Arin Deravanesian**
+
+---
+
+### Chat Application Demo
+
+##### You can find a brief application demo on youtube:
