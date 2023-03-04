@@ -79,8 +79,20 @@ exit - Use this command to exit the chat application
 
 #### **Arin Deravanesian**
 
+###### I worked on the server side of the application, my work consisted of:
+
+###### -Create a server socket to listen for incoming connections and information from the client
+
+###### -Also create a connectionSocket for every message that comes in from a client, after that messages is handled we then close that connection socket but we do not close the server socket
+
+##### -Disply an error if the user inputs a port that is already in use by another process. You must run on different ports if on the same IP to communicate.
+
+###### -Lastly parse messages from a client to check if it is a connection, termination, or message.
+
 ---
 
 ### Chat Application Demo
 
 ##### You can find a brief application demo on youtube:
+
+##### DEMO VIDEO LINK COMING SOON

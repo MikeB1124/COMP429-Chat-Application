@@ -32,7 +32,6 @@ def server():
                 print(f"\n\nMessage received from {ip}")
                 print(f"Sender's Port: {port}")
                 print(f'Message: "{messageBody}"')
-                # print(f"\nMessage From ({ip}:{port}): {messageBody}")
                 
             connectionSocket.close()
     except:
@@ -179,43 +178,46 @@ def exitApp():
         
 #Prompt user for port number before starting application
 while not validServerPort:
-    serverPort = input("Choose listenting port number (port number > 1000): ")
+    serverPort = input("Choose listenting port number (port number > 1024): ")
     if(serverPort != ""):
-        if(int(serverPort) > 1000):
+        if(int(serverPort) > 1024):
             validServerPort = True
         else:
-            print("Port number must be greater then 1000")
+            print("Port number must be greater then 1024")
 threading.Thread(target=server, daemon=True).start()       
 
 
 #Run Client Application if a Valid Port is Entered
 while True and validServerPort:
     userInput = input("\nChoose from menu options or enter help for to see options: ")
-    if(userInput == "help"):
-        help()
-    elif(userInput == "myip"):
-        ip = myip()
-        print(f"The devices ip address is {ip}")
-    elif(userInput == "myport"):
-        print(f"The program runs on port number {serverPort}")
-    elif(userInput.split(" ")[0] == "connect"):
-        ipInput = userInput.split(" ")[1]
-        portInput = userInput.split(" ")[2]
-        connectToPeer(ipInput, portInput)
-    elif(userInput == "list"):
-        listConnections()
-    elif(userInput.split(" ")[0] == "terminate"):
-        id = userInput.split(" ")[1]
-        terminateConnection(id)
-    elif(userInput.split(" ")[0] == "send"):
-        userId = userInput.split(" ")[1]
-        message = userInput.split('"')[1]
-        if(len(message) <= 100):
-            sendMessage(userId, message)
+    try:
+        if(userInput == "help"):
+            help()
+        elif(userInput == "myip"):
+            ip = myip()
+            print(f"The devices ip address is {ip}")
+        elif(userInput == "myport"):
+            print(f"The program runs on port number {serverPort}")
+        elif(userInput.split(" ")[0] == "connect"):
+            ipInput = userInput.split(" ")[1]
+            portInput = userInput.split(" ")[2]
+            connectToPeer(ipInput, portInput)
+        elif(userInput == "list"):
+            listConnections()
+        elif(userInput.split(" ")[0] == "terminate"):
+            id = userInput.split(" ")[1]
+            terminateConnection(id)
+        elif(userInput.split(" ")[0] == "send"):
+            userId = userInput.split(" ")[1]
+            message = userInput.split('"')[1]
+            if(len(message) <= 100):
+                sendMessage(userId, message)
+            else:
+                print("\nMessage cannot be longer then 100 characters.")
+        elif(userInput == "exit"):
+            exitApp()
         else:
-            print("\nMessage cannot be longer then 100 characters.")
-    elif(userInput == "exit"):
-        exitApp()
-    else:
-        if(userInput != ""):
-            print("Invalid option")
+            if(userInput != ""):
+                print("Invalid option")
+    except:
+        print("Invalid input format please look at instructions on README file")
