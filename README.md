@@ -95,4 +95,4 @@ exit - Use this command to exit the chat application
 
 ##### You can find a brief application demo on youtube:
 
-##### DEMO VIDEO LINK COMING SOON
+##### https://youtu.be/trYh3pMo1cg
